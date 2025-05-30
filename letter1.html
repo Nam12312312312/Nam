@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bức thư 💖</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to top, #fff0f5, #ffffff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .letter-box {
+      max-width: 700px;
+      padding: 40px;
+      background-color: #fffafa;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      color: #444;
+      line-height: 1.8;
+      font-size: 18px;
+      text-align: left;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-style: italic;
+      color: #aa0000;
+    }
+
+    .heart {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 8s linear infinite;
+      opacity: 0.6;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -7.5px; left: 0; }
+    .heart::after { left: -7.5px; top: 0; }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(45deg); opacity: 0.7; }
+      100% { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="letter-box">
+    <p>Dear Lan Hương người con gái của anh,</p>
+    <p>Anh yêu rất rất nhiều, yêu em nhiều hơn cả bản thân anh. Anh chỉ muốn người anh yêu hạnh phúc và vui vẻ.</p>
+    <p>Anh xin lỗi vì đôi lúc làm em buồn và khó chịu.</p>
+    <p>Anh yêu em không phải vì một lý do nào hết, mà là vì toàn bộ chính em – một bản thể toàn diện của người phụ nữ đời anh.</p>
+    <p>Hôm nay anh biết em mệt mỏi và cần anh, nhưng anh lại không thể ở bên em. Anh xin lỗi em.</p>
+    <p>Anh hứa tuần sau anh sẽ bù đắp lại cho em thật nhiều.</p>
+    <p>Nếu em thấy sức khoẻ không ổn thì ngày mai mình cùng đi bệnh viện khám nhé vợ yêu, vợ của anh vãiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii.</p>
+    <p class="signature">Gửi người phụ nữ của cả đời anh,<br/>Lê Hoàng Nam</p>
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.top = '100vh';
+      heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      heart.style.background = ['#ff6b81', '#ff4757', '#e056fd'][Math.floor(Math.random()*3)];
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 10000);
+    }
+    setInterval(createHeart, 150);
+  </script>
+</body>
+</html>
